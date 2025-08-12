@@ -98,7 +98,7 @@ export default function TestimonialSlider() {
   return (
     <section className="relative bg-gradient-to-br from-white to-[#fff5f5] py-16 px-4 text-center overflow-hidden">
       <p className="text-sm text-red-500 tracking-widest font-semibold mb-2">
-        TESTIMONIALS
+        TESTIMONIALS d
       </p>
       <h2 className="text-3xl md:text-4xl font-bold mb-2">
         Happy Clients Reflect on Their
