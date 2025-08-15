@@ -105,7 +105,7 @@ function Home() {
 
 
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <section className="bg-[#fff8f3] pt-12 md:pt-20 pb-16">
                 <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center px-6 gap-10">
                     {/* LEFT TEXT */}

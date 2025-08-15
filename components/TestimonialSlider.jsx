@@ -1,9 +1,10 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react'; // Or any icon set
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -73,32 +74,44 @@ const NextArrow = ({ onClick }) => (
   </button>
 );
 
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  prevArrow: <PrevArrow />,
-  nextArrow: <NextArrow />,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: { slidesToShow: 2 },
-    },
-    {
-      breakpoint: 768,
-      settings: { slidesToShow: 1 },
-    },
-  ],
-};
-
 export default function TestimonialSlider() {
+  const [slidesToShow, setSlidesToShow] = useState(3);
+  const sliderWrapperRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (!sliderWrapperRef.current) return;
+      const width = sliderWrapperRef.current.offsetWidth;
+
+      if (width < 500) {
+        setSlidesToShow(1);
+      } else if (width < 1024) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(3);
+      }
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow,
+    slidesToScroll: 1,
+    autoplay: true,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-white to-[#fff5f5] py-16 px-4 text-center overflow-hidden">
       <p className="text-sm text-red-500 tracking-widest font-semibold mb-2">
-        TESTIMONIALS d
+        TESTIMONIALS
       </p>
       <h2 className="text-3xl md:text-4xl font-bold mb-2">
         Happy Clients Reflect on Their
@@ -107,7 +120,7 @@ export default function TestimonialSlider() {
         Journey with Us
       </h3>
 
-      <div className="relative max-w-7xl mx-auto px-4 py-10">
+      <div ref={sliderWrapperRef} className="relative max-w-7xl mx-auto px-4 py-10">
         <Slider {...settings}>
           {testimonials.map((item, index) => (
             <motion.div
@@ -132,19 +145,16 @@ export default function TestimonialSlider() {
                   <div className="flex items-center space-x-2">
                     <Image src={item.icon} alt="icon" width={35} height={35} />
                     <div>
-
-                    <span className="text-sm text-gray-600">{item.tag}</span>
-                     <div className="flex">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <span key={i} className="text-red-500">
-                        {i < item.stars ? '★' : '☆'}
-                      </span>
-                    ))}
-                  </div>
+                      <span className="text-sm text-gray-600">{item.tag}</span>
+                      <div className="flex">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <span key={i} className="text-red-500">
+                            {i < item.stars ? '★' : '☆'}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-
                   </div>
-                 
                 </div>
               </div>
             </motion.div>
