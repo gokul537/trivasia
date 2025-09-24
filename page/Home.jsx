@@ -106,7 +106,7 @@ function Home() {
 
     return (
         <div className='overflow-x-hidden'>
-            <section className="bg-[#fff8f3] pt-12 md:pt-20 pb-16">
+            <section className="bg-[#fff8f3] pt-12 md:pt-20 pb-16" id="home">
                 <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center px-6 gap-10">
                     {/* LEFT TEXT */}
                     <motion.div
@@ -170,7 +170,7 @@ function Home() {
             </section>
 
 
-            <section className="bg-white py-16 px-4 md:px-8">
+            <section className="bg-white py-16 px-4 md:px-8" id='about-us'>
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
                     {/* LEFT IMAGES */}
                     <motion.div
@@ -276,7 +276,7 @@ function Home() {
             </section>
 
 
-            <section className="py-16 px-4 md:px-12 lg:px-20 bg-white text-gray-800">
+            <section className="py-16 px-4 md:px-12 lg:px-20 bg-white text-gray-800" id="services">
                 <div className="text-center md:text-start flex flex-wrap mb-12">
                     <div>
                         <p className="text-sm tracking-widest text-red-600 uppercase">Services</p>
@@ -364,7 +364,7 @@ function Home() {
 
 
 
-            <section>
+            <section id="testimonials">
                 <div className="max-w-7xl mx-auto px-4 py-10 ">
                     {/* Tabs */}
                     <div className="flex items-center gap-4 mb-6 border border-gray-200 rounded-xl p-5 w-fit bg-gray-50">
@@ -413,7 +413,7 @@ function Home() {
                 <Branches />
             </section>
 
-            <section>
+            <section id="blog">
                 <BlogSection/>
             </section>
 

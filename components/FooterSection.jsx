@@ -16,7 +16,7 @@ export default function FooterSection() {
   return (
     <div className="relative" >
       {/* Top Banner */}
-      <div className="bg-white rounded-xl relative shadow-md p-6 z-50 md:p-0 flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto mt-8">
+      <div className="bg-white rounded-xl relative shadow-md p-6 z-10 md:p-0 flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto mt-8">
         <div className="flex-shrink-0">
           <Image
             src={Footer}

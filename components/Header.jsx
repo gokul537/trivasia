@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, PhoneCall } from 'lucide-react';
 import Image from 'next/image';
@@ -10,6 +10,28 @@ const navLinks = ['Home', 'About Us', 'Services', 'Testimonials', 'Blog', 'Conta
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('Home');
+
+  // Scroll spy effect
+  useEffect(() => {
+    const handleScroll = () => {
+      let current = 'Home';
+      navLinks.forEach((link) => {
+        const section = document.getElementById(link.toLowerCase().replace(/\s+/g, '-'));
+        if (section) {
+          const sectionTop = section.offsetTop - 120; // header height offset
+          if (window.scrollY >= sectionTop) {
+            current = link;
+          }
+        }
+      });
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header className="bg-[#fff8f3] shadow-sm sticky top-0 z-50">
@@ -24,14 +46,12 @@ export default function Header() {
           {navLinks.map((link, idx) => (
             <motion.a
               key={idx}
-              href="#"
+              href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
               whileHover={{ scale: 1.05, color: '#d32f2f' }}
-              className={`relative ${
-                link === 'Home' ? 'text-red-600' : ''
-              }`}
+              className={`relative ${activeSection === link ? 'text-red-600' : ''}`}
             >
               {link}
-              {link === 'Home' && (
+              {activeSection === link && (
                 <motion.span
                   layoutId="underline"
                   className="absolute left-0 -bottom-1 w-full h-0.5 bg-red-600"
@@ -72,8 +92,11 @@ export default function Header() {
             {navLinks.map((link, idx) => (
               <a
                 key={idx}
-                href="#"
-                className="text-gray-800 hover:text-red-600 transition"
+                href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+                className={`text-gray-800 hover:text-red-600 transition ${
+                  activeSection === link ? 'text-red-600 font-bold' : ''
+                }`}
+                onClick={() => setIsOpen(false)}
               >
                 {link}
               </a>
