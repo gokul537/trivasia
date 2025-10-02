@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
 import Head from "next/head";
 
+import favicons from "@/asset/logo.png"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,6 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
        <Head>
+        <link rel="icon" href={favicons} sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <body
