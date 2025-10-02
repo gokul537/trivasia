@@ -27,6 +27,7 @@ import TestimonialSlider from '@/components/TestimonialSlider';
 import FAQSection from '@/components/FAQSection';
 import Branches from '@/components/Branchs';
 import BlogSection from '@/components/Blogsection';
+import Link from 'next/link';
 
 const features = [
     {
@@ -98,9 +99,63 @@ function Home() {
 
 
     const tabContents = {
-        'Our Mission': 'Our mission is to provide exceptional global education opportunities to every student.',
-        'Our Vision': 'Our vision is to be the most trusted global education partner.',
-        'Why Choose Us': 'We offer personalized support, financial assistance, and guaranteed graduation pathways.',
+        'Our Mission': <>
+            <p>Our mission is to empower students by offering world-class education, global opportunities, and lifelong support for academic and personal growth.</p>
+
+            {/* Features List */}
+            <div className="space-y-3 mt-2">
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span>100% Graduation Assistance</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span>Financial Guidance & Scholarships</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span>Career-Oriented Programs</span>
+                </div>
+            </div>
+        </>,
+        'Our Vision': <>
+            <p>Our vision is to create a world where every learner has access to quality education, cultural exposure, and the freedom to shape their own future beyond borders.</p>
+
+            {/* Features List */}
+            <div className="space-y-3 mt-2">
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span>Building Global Leaders</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span>Fostering Cultural Exchange</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span>Empowering Future Generations</span>
+                </div>
+            </div>
+        </>,
+        'Why Choose Us': <>
+            <p>We go beyond academics – shaping experiences, guiding journeys, and opening doors to a brighter tomorrow.</p>
+
+            {/* Features List */}
+            <div className="space-y-3 mt-2">
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span>Personalized Guidance & Counseling</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span>International Network & Partnerships</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span>End-to-End Support: From Admission to Settlement</span>
+                </div>
+            </div>
+        </>,
     };
 
 
@@ -123,15 +178,17 @@ function Home() {
                         </h1>
 
                         <p className="mt-4 text-gray-600 text-base md:text-lg">
-                            Explore Education, Enjoy Vacations, Build a New Life – All Under One Roof
+                            Achieve Dreams, Enjoy Moments, Build a Future – All Under One Roof
                         </p>
 
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            className="mt-6 bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-full text-sm font-semibold"
-                        >
-                            Get Started
-                        </motion.button>
+                        <Link href="">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                className="mt-6 bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-full text-sm font-semibold"
+                            >
+                                Get Started
+                            </motion.button>
+                        </Link>
                     </motion.div>
 
                     {/* RIGHT IMAGE */}
@@ -215,21 +272,11 @@ function Home() {
                         </div>
 
                         {/* Tab Content */}
-                        <p className="text-gray-600 text-sm sm:text-base mb-6 leading-relaxed">
+                        <div className="text-gray-600 text-sm sm:text-base mb-6 leading-relaxed">
                             {tabContents[activeTab]}
-                        </p>
-
-                        {/* Features List */}
-                        <div className="space-y-3">
-                            <div className="flex items-center gap-3 text-gray-800">
-                                <CheckCircle className="w-5 h-5 text-red-600" />
-                                <span>100% Graduation Assistance</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-gray-800">
-                                <CheckCircle className="w-5 h-5 text-red-600" />
-                                <span>Financial Support</span>
-                            </div>
                         </div>
+
+
                     </motion.div>
                 </div>
             </section>
@@ -373,8 +420,8 @@ function Home() {
                                 key={tab.id}
                                 onClick={() => setSelectedTab(tab.id)}
                                 className={`px-4 py-2 rounded-xl text-sm font-medium ${selectedTab === tab.id
-                                        ? 'bg-white text-black shadow'
-                                        : 'text-gray-500'
+                                    ? 'bg-white text-black shadow'
+                                    : 'text-gray-500'
                                     }`}
                             >
                                 {tab.label}
@@ -414,7 +461,7 @@ function Home() {
             </section>
 
             <section id="blog">
-                <BlogSection/>
+                <BlogSection />
             </section>
 
 

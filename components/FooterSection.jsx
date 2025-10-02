@@ -99,7 +99,7 @@ export default function FooterSection() {
 
         {/* Bottom Bar */}
         <div className="text-center text-xs text-gray-500 mt-8 border-t pt-4">
-          © 2022 Trivasia Tours & Travels Private Limited. All Rights Reserved.{" "}
+          © 2025 Trivasia Tours & Travels Private Limited. All Rights Reserved.{" "}
           <span className="block md:inline">
             Developed By{" "}
             <a href="#" className="font-medium text-gray-700 hover:text-red-500">
