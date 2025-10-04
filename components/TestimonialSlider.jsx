@@ -11,44 +11,45 @@ import 'slick-carousel/slick/slick-theme.css';
 import iconone from "@/asset/icon1.svg";
 import icontwo from "@/asset/icon2.svg";
 import iconthree from "@/asset/icon3.svg";
+import aone from "@/asset/a1.png";
 
 const testimonials = [
   {
     id: 1,
-    name: 'Kathryn Murphy',
-    avatar: '/avatar1.png',
+    name: '— Arun Kumar, Chennai',
+    avatar: aone,
     content:
-      'Had an excellent call with Austin. He gave me a lot of ideas to test to improve my content.',
+      'Trivasia made my dream of studying abroad so simple. From application to visa, everything was stress-free!',
     tag: 'Travisia - Study Abroad',
     icon: iconone,
     stars: 4,
   },
   {
     id: 2,
-    name: 'Savannah Nguyen',
-    avatar: '/avatar2.png',
+    name: '— Priya Ramesh, Coimbatore',
+    avatar: aone,
     content:
-      "I had an instant connection with Dani, and loved talking to her! We talked about Worklife balance.",
+      "The transparent process and friendly guidance gave me full confidence to move forward with my plans.",
     tag: 'Travisia - Holiday Package',
     icon: icontwo,
     stars: 5,
   },
   {
     id: 3,
-    name: 'Jane Cooper',
-    avatar: '/avatar3.png',
+    name: '— Karthik S, Madurai',
+    avatar: aone,
     content:
-      'Great mentorship, we had really common topics on our ways of working. He gave me pretty nice insight.',
+      'Thanks to their expert team, I got admission in my dream university and financial support as well.',
     tag: 'Travisia - Immigration',
     icon: iconthree,
     stars: 4,
   },
   {
     id: 4,
-    name: 'Ralph Edwards',
-    avatar: '/avatar3.png',
+    name: '— Divya Lakshmi, Trichy',
+    avatar: aone,
     content:
-      'Super helpful session and great energy throughout. I got more clarity about my next steps.',
+      'Their step-by-step guidance made immigration smooth and hassle-free. Truly life-changing!',
     tag: 'Travisia - Study Abroad',
     icon: iconone,
     stars: 5,

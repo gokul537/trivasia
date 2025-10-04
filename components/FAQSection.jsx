@@ -11,18 +11,18 @@ const faqs = [
   {
     question: 'What services do you offer?',
     answer:
-      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
+      'We provide comprehensive immigration, visa, and relocation assistance for individuals and businesses seeking to move or expand internationally.',
     points: ['100% Graduation Assistance', 'Financial Support'],
   },
   {
     question: 'What is the consultation process like?',
     answer:
-      'We follow a simple, transparent consultation process tailored to each individual’s needs.',
+      'Our consultation process begins with understanding your goals and background. We then provide tailored advice and a step-by-step action plan to achieve your objectives.',
   },
   {
     question: 'What is your success rate with visa applications?',
     answer:
-      'We boast a 95% success rate on visa applications, thanks to our expert guidance.',
+      'We maintain a high success rate through careful preparation, accurate documentation, and years of experience navigating complex immigration processes.',
   },
   {
     question: 'How do I get started with your services?',

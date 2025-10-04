@@ -28,22 +28,23 @@ import FAQSection from '@/components/FAQSection';
 import Branches from '@/components/Branchs';
 import BlogSection from '@/components/Blogsection';
 import Link from 'next/link';
+import ModalForm from '@/components/ModalForm';
 
 const features = [
     {
         icon: <BrainCircuit className="h-8 w-8 text-blue-600" />,
         title: "Comprehensive Solutions",
-        description: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.",
+        description: "One-stop support for all your global education needs.",
     },
     {
         icon: <BadgeCheck className="h-8 w-8 text-yellow-600" />,
         title: "Transparent Processes",
-        description: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.",
+        description: "Clear, honest, and trustworthy every step of the way.",
     },
     {
         icon: <User2 className="h-8 w-8 text-purple-600" />,
         title: "Expert Guidance",
-        description: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.",
+        description: "Personalized advice from experienced global mentors.",
     },
 ];
 
@@ -52,19 +53,22 @@ const services = [
         title: "Study Abroad",
         icon: <BookOpen className="w-6 h-6 text-white" />,
         image: s1, // replace with your image
-        desc: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+        desc: "Unlock world-class education opportunities across top universities. From applications to scholarships, we guide you every step of the way.",
+        hrefs:""
     },
     {
         title: "Holiday Packages",
         icon: <Plane className="w-6 h-6 text-white" />,
         image: s2,
-        desc: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+        desc: "Discover breathtaking destinations with our customized travel plans. Enjoy hassle-free bookings and unforgettable experiences.",
+        hrefs:""
     },
     {
         title: "Immigration",
         icon: <Globe2 className="w-6 h-6 text-white" />,
         image: s3,
-        desc: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+        desc: "Turn your dream of living abroad into reality. We provide expert visa assistance, legal support, and settlement guidance.",
+        hrefs:""
     },
 ];
 
@@ -97,7 +101,7 @@ function Home() {
     const [activeTab, setActiveTab] = useState(tabs[0]);
     const [selectedTab, setSelectedTab] = useState(1); // ✅ Changed from activeTab
 
-
+ const [open, setOpen] = useState(false);
     const tabContents = {
         'Our Mission': <>
             <p>Our mission is to empower students by offering world-class education, global opportunities, and lifelong support for academic and personal growth.</p>
@@ -183,6 +187,7 @@ function Home() {
 
                         <Link href="">
                             <motion.button
+                            onClick={() => setOpen(true)}
                                 whileHover={{ scale: 1.05 }}
                                 className="mt-6 bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-full text-sm font-semibold"
                             >
@@ -298,7 +303,7 @@ function Home() {
                             <span className="text-red-600">Horizons with Us!</span>
                         </h2>
                         <p className="mt-4 text-gray-600 max-w-md">
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia Neque porro
+                            We are committed to guiding you through every step of your journey – from choosing the right education path to settling in a new country. With trust, transparency, and expertise, we make your global dreams a reality.
                         </p>
                     </motion.div>
 
@@ -332,7 +337,7 @@ function Home() {
                         </h2>
                     </div>
                     <p className="text-sm mt-4 max-w-2xl mx-auto">
-                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu Neque porro quisquam  Neque porro quisquam est, qui dolorem Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                        At Trivasia, we go beyond just services – we design life-changing experiences. Whether it’s pursuing education abroad, exploring new destinations, or starting a new life in another country, we provide end-to-end solutions with trust, care, and expertise.
                     </p>
                 </div>
 
@@ -359,12 +364,12 @@ function Home() {
                             <div className="p-6">
                                 <h3 className="text-lg font-bold mb-2">{service.title}</h3>
                                 <p className="text-sm text-gray-600 mb-4">{service.desc}</p>
-                                <a
-                                    href="#"
+                                <Link
+                                    href={service.hrefs}
                                     className="text-red-600 font-semibold text-sm inline-flex items-center gap-1 hover:underline"
                                 >
                                     Explore More <span>→</span>
-                                </a>
+                                </Link>
                             </div>
                         </motion.div>
                     ))}
@@ -464,7 +469,7 @@ function Home() {
                 <BlogSection />
             </section>
 
-
+      <ModalForm open={open} onClose={() => setOpen(false)} />
         </div>
     )
 }

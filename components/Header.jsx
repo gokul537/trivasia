@@ -5,13 +5,14 @@ import { Menu, PhoneCall } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from "@/asset/logo.png";
+import ModalForm from './ModalForm';
 
 const navLinks = ['Home', 'About Us', 'Services', 'Testimonials', 'Blog', 'Contact Us'];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('Home');
-
+ const [open, setOpen] = useState(false);
   // Scroll spy effect
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +68,7 @@ export default function Header() {
             <PhoneCall className="w-5 h-5" />
             <span>+91 8098558877</span>
           </div>
-          <button className="bg-red-600 hover:bg-red-700 transition text-white px-4 py-2 rounded-full text-sm font-semibold">
+          <button onClick={() => setOpen(true)} className="bg-red-600 hover:bg-red-700 transition text-white px-4 py-2 rounded-full text-sm font-semibold">
             Need Consultation
           </button>
         </div>
@@ -106,13 +107,14 @@ export default function Header() {
                 <PhoneCall className="w-5 h-5" />
                 <span>+91 8098558877</span>
               </div>
-              <button className="mt-4 bg-red-600 hover:bg-red-700 transition text-white px-4 py-2 w-full rounded-full text-sm font-semibold">
+              <button onClick={() => setOpen(true)} className="mt-4 bg-red-600 hover:bg-red-700 transition text-white px-4 py-2 w-full rounded-full text-sm font-semibold">
                 Need Consultation
               </button>
             </div>
           </div>
         </motion.div>
       )}
+      <ModalForm open={open} onClose={() => setOpen(false)} />
     </header>
   );
 }
