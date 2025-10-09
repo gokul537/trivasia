@@ -20,7 +20,7 @@ export default function Loader({ onFinish }) {
 
   useEffect(() => {
     const confettiTimer = setTimeout(() => setShowConfetti(true), 1000); // 1 second delay
-    const finishTimer = setTimeout(() => onFinish(), 6000); // 6 seconds
+    const finishTimer = setTimeout(() => onFinish(), 60000); // 6 seconds
     return () => {
       clearTimeout(confettiTimer);
       clearTimeout(finishTimer);

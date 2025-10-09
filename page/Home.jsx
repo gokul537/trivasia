@@ -30,19 +30,23 @@ import BlogSection from '@/components/Blogsection';
 import Link from 'next/link';
 import ModalForm from '@/components/ModalForm';
 
+import w1 from "@/asset/w1.svg";
+import w2 from "@/asset/w2.svg";
+import w3 from "@/asset/w3.svg";
+
 const features = [
     {
-        icon: <BrainCircuit className="h-8 w-8 text-blue-600" />,
+        icon: w1,
         title: "Comprehensive Solutions",
         description: "One-stop support for all your global education needs.",
     },
     {
-        icon: <BadgeCheck className="h-8 w-8 text-yellow-600" />,
+        icon: w2,
         title: "Transparent Processes",
         description: "Clear, honest, and trustworthy every step of the way.",
     },
     {
-        icon: <User2 className="h-8 w-8 text-purple-600" />,
+        icon: w3,
         title: "Expert Guidance",
         description: "Personalized advice from experienced global mentors.",
     },
@@ -54,21 +58,22 @@ const services = [
         icon: <BookOpen className="w-6 h-6 text-white" />,
         image: s1, // replace with your image
         desc: "Unlock world-class education opportunities across top universities. From applications to scholarships, we guide you every step of the way.",
-        hrefs:""
+        hrefs:"https://study.trivasia.com/"
     },
     {
         title: "Holiday Packages",
         icon: <Plane className="w-6 h-6 text-white" />,
         image: s2,
         desc: "Discover breathtaking destinations with our customized travel plans. Enjoy hassle-free bookings and unforgettable experiences.",
-        hrefs:""
+    
+        hrefs:"https://tours.trivasia.com/"
     },
     {
         title: "Immigration",
         icon: <Globe2 className="w-6 h-6 text-white" />,
         image: s3,
         desc: "Turn your dream of living abroad into reality. We provide expert visa assistance, legal support, and settlement guidance.",
-        hrefs:""
+        hrefs:"#"
     },
 ];
 
@@ -174,11 +179,11 @@ function Home() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                        <h1 className="text-3xl font-quicksand sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                             Your Gateway to <br />
-                            <span className="text-red-600">Study</span>,{' '}
-                            <span className="text-red-600">Holiday</span>, and <br />
-                            <span className="text-red-600">New Beginnings!</span>
+                            <span className="text-red-600 font-quicksand">Study</span>,{' '}
+                            <span className="text-red-600 font-quicksand">Holiday</span>, and <br />
+                            <span className="text-red-600 font-quicksand">New Beginnings!</span>
                         </h1>
 
                         <p className="mt-4 text-gray-600 text-base md:text-lg">
@@ -318,7 +323,7 @@ function Home() {
                                 viewport={{ once: true }}
                                 className="flex flex-col items-start"
                             >
-                                <div className="mb-4">{feature.icon}</div>
+                                <div className="mb-4"><Image src={feature.icon} alt='' /> </div>
                                 <h3 className="text-lg font-semibold mb-1">{feature.title}</h3>
                                 <p className="text-sm text-gray-600">{feature.description}</p>
                             </motion.div>

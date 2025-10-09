@@ -5,28 +5,28 @@ export default function Branches() {
   const branches = [
     {
       title: "Trichy",
-      phone: "+91 9786753496",
+      phone: "+91 9629557788, 8940557788",
       email: "admission@trivasia.com",
       address:
         "14/15, Chithra Complex, Near Chathram Bus Stand, Trichy, Tamil Nadu - 639 001",
     },
     {
       title: "Coimbatore",
-      phone: "+91 9842815717",
+      phone: "+91 9629557788, 8940557788",
       email: "admission@trivasia.com",
       address:
         "New No: 19, First Floor, New Scheme Road, Pappanaayakkan Palayam, Coimbatore, Tamil Nadu - 641 037",
     },
     {
       title: "Kumbakonam",
-      phone: "+91 8940885544",
+      phone: "+91 9629557788, 8940557788",
       email: "admission@trivasia.com",
       address:
         "No: 11 b, Chakrapani Thirumanjana veethi, Massvil Complex, 1st Floor, Kumbakonam, Tamil Nadu - 612101",
     },
     {
       title: "Madurai",
-      phone: "+91 9842921884",
+      phone: "+91 9629557788, 8940557788",
       email: "admission@trivasia.com",
       address:
         "No: 180C, 1st Floor, Kamarajar Salai, Near Chamber of Commerce Building, Madurai, Tamil Nadu - 625009",
@@ -55,7 +55,7 @@ export default function Branches() {
         {/* Phone */}
         <div className="flex items-start gap-2">
           <Phone className="w-5 h-5 text-red-500 mt-1" />
-          <span className="text-gray-700">+91 8098558877</span>
+          <span className="text-gray-700">+91 9629557788</span>
         </div>
 
         {/* Email */}

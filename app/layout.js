@@ -1,20 +1,18 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
 import Head from "next/head";
 
-import favicons from "@/asset/logo.png"
+import favicons from "@/asset/favicon.jpg"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const quicksand = Quicksand({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // pick weights you need
+  variable: "--font-quicksand", // for Tailwind usage
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata = {
   title: "trivasia",
@@ -29,7 +27,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={quicksand.variable} 
       >
         <Header/>
         {children}

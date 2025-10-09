@@ -37,15 +37,15 @@ export default function FooterSection() {
 
       {/* Footer */}
       <footer className="-mt-20 bg-orange-50 border-t border-gray-200 pt-30 pb-6 px-4 md:px-8 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-6xl mx-auto ">
           {/* Company Info */}
-          <div>
+          <div >
             <Image src={Logo} alt="Trivasia" className="w-28 mb-4" />
             <p className="text-gray-600 text-sm mb-3">
               Do you have questions or want more information? Contact us now
             </p>
             <p className="flex items-center gap-2 text-gray-700">
-              <Phone className="w-4 h-4 text-red-500" /> +91 8098558877
+              <Phone className="w-4 h-4 text-red-500" /> +91 9629557788
             </p>
             <p className="flex items-center gap-2 text-gray-700 mt-1">
               <Mail className="w-4 h-4 text-red-500" /> admission@trivasia.com
