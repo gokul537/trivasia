@@ -58,22 +58,22 @@ const services = [
         icon: <BookOpen className="w-6 h-6 text-white" />,
         image: s1, // replace with your image
         desc: "Unlock world-class education opportunities across top universities. From applications to scholarships, we guide you every step of the way.",
-        hrefs:"https://study.trivasia.com/"
+        hrefs: "https://study.trivasia.com/"
     },
     {
         title: "Holiday Packages",
         icon: <Plane className="w-6 h-6 text-white" />,
         image: s2,
         desc: "Discover breathtaking destinations with our customized travel plans. Enjoy hassle-free bookings and unforgettable experiences.",
-    
-        hrefs:"https://tours.trivasia.com/"
+
+        hrefs: "https://tours.trivasia.com/"
     },
     {
         title: "Immigration",
         icon: <Globe2 className="w-6 h-6 text-white" />,
         image: s3,
         desc: "Turn your dream of living abroad into reality. We provide expert visa assistance, legal support, and settlement guidance.",
-        hrefs:"#"
+        hrefs: "#"
     },
 ];
 
@@ -106,7 +106,7 @@ function Home() {
     const [activeTab, setActiveTab] = useState(tabs[0]);
     const [selectedTab, setSelectedTab] = useState(1); // ✅ Changed from activeTab
 
- const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
     const tabContents = {
         'Our Mission': <>
             <p>Our mission is to empower students by offering world-class education, global opportunities, and lifelong support for academic and personal growth.</p>
@@ -173,37 +173,38 @@ function Home() {
             <section className="bg-[#fff8f3] pt-12 md:pt-20 pb-16" id="home">
                 <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center px-6 gap-10">
                     {/* LEFT TEXT */}
-                    <motion.div
-                        className="md:w-1/2 text-center md:text-left"
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h1 className="text-3xl font-quicksand sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                            Your Gateway to <br />
-                            <span className="text-red-600 font-quicksand">Study</span>,{' '}
-                            <span className="text-red-600 font-quicksand">Holiday</span>, and <br />
-                            <span className="text-red-600 font-quicksand">New Beginnings!</span>
-                        </h1>
+<motion.div
+  className="md:w-1/2 w-full text-center md:text-left px-4 md:px-0"
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-quicksand text-gray-900 leading-snug md:leading-tight">
+    Your Gateway to <br />
+    <span className="text-red-600 font-quicksand">Study</span>,{" "}
+    <span className="text-red-600 font-quicksand">Holiday</span>, and <br />
+    <span className="text-red-600 font-quicksand">New Beginnings!</span>
+  </h1>
 
-                        <p className="mt-4 text-gray-600 text-base md:text-lg">
-                            Achieve Dreams, Enjoy Moments, Build a Future – All Under One Roof
-                        </p>
+  <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg">
+    Achieve Dreams, Enjoy Moments, Build a Future – All Under One Roof
+  </p>
 
-                        <Link href="">
-                            <motion.button
-                            onClick={() => setOpen(true)}
-                                whileHover={{ scale: 1.05 }}
-                                className="mt-6 bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-full text-sm font-semibold"
-                            >
-                                Get Started
-                            </motion.button>
-                        </Link>
-                    </motion.div>
+  <Link href="">
+    <motion.button
+      onClick={() => setOpen(true)}
+      whileHover={{ scale: 1.05 }}
+      className="mt-6 bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-full text-sm sm:text-base font-semibold"
+    >
+      Get Started
+    </motion.button>
+  </Link>
+</motion.div>
+
 
                     {/* RIGHT IMAGE */}
                     <motion.div
-                        className="md:w-1/2 relative flex justify-center"
+                        className="md:w-1/2 w-full relative flex justify-center"
                         initial={{ opacity: 0, x: 40 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -213,7 +214,7 @@ function Home() {
                             alt="Student Travel Girl"
                             width={400}
                             height={400}
-                            className="rounded-xl z-10 relative"
+                            className="rounded-xl z-10 relative w-full h-auto md:w-[380px]"
                         />
 
                         {/* Animated Plane Icon */}
@@ -227,12 +228,13 @@ function Home() {
                             transition={{
                                 duration: 3,
                                 repeat: Infinity,
-                                ease: 'easeInOut',
+                                ease: "easeInOut",
                             }}
                         >
                             <Image src={Flight} alt="Plane" width={40} height={40} />
                         </motion.div>
                     </motion.div>
+
                 </div>
             </section>
 
@@ -474,7 +476,7 @@ function Home() {
                 <BlogSection />
             </section>
 
-      <ModalForm open={open} onClose={() => setOpen(false)} />
+            <ModalForm open={open} onClose={() => setOpen(false)} />
         </div>
     )
 }

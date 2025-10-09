@@ -36,18 +36,18 @@ export default function FooterSection() {
       </div>
 
       {/* Footer */}
-      <footer className="-mt-20 bg-orange-50 border-t border-gray-200 pt-30 pb-6 px-4 md:px-8 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-6xl mx-auto ">
+      <footer className="bg-orange-50 border-t border-gray-200 pt-12 pb-6 px-4 md:px-8 lg:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-6xl mx-auto text-center md:text-left">
           {/* Company Info */}
-          <div >
-            <Image src={Logo} alt="Trivasia" className="w-28 mb-4" />
+          <div>
+            <Image src={Logo} alt="Trivasia" className="w-28 mb-4 mx-auto md:mx-0" />
             <p className="text-gray-600 text-sm mb-3">
               Do you have questions or want more information? Contact us now
             </p>
-            <p className="flex items-center gap-2 text-gray-700">
+            <p className="flex justify-center md:justify-start items-center gap-2 text-gray-700">
               <Phone className="w-4 h-4 text-red-500" /> +91 9629557788
             </p>
-            <p className="flex items-center gap-2 text-gray-700 mt-1">
+            <p className="flex justify-center md:justify-start items-center gap-2 text-gray-700 mt-1">
               <Mail className="w-4 h-4 text-red-500" /> admission@trivasia.com
             </p>
           </div>
@@ -55,7 +55,7 @@ export default function FooterSection() {
           {/* Locations */}
           <div>
             <h4 className="font-bold text-red-500 mb-3">Locations</h4>
-            <ul className="space-y-1 text-gray-700 text-sm">
+            <ul className="space-y-2 text-gray-700 text-sm">
               <li>Karur (Head Office)</li>
               <li>Trichy</li>
               <li>Coimbatore</li>
@@ -67,7 +67,7 @@ export default function FooterSection() {
           {/* Explore Links */}
           <div>
             <h4 className="font-bold text-red-500 mb-3">Explore Link</h4>
-            <ul className="space-y-1 text-gray-700 text-sm">
+            <ul className="space-y-2 text-gray-700 text-sm">
               <li>About Us</li>
               <li>Blog</li>
               <li>Careers</li>
@@ -78,7 +78,7 @@ export default function FooterSection() {
           {/* Services */}
           <div>
             <h4 className="font-bold text-red-500 mb-3">Services</h4>
-            <ul className="space-y-1 text-gray-700 text-sm">
+            <ul className="space-y-2 text-gray-700 text-sm">
               <li>Study Abroad</li>
               <li>Holiday Package</li>
               <li>Immigration</li>
@@ -88,7 +88,7 @@ export default function FooterSection() {
           {/* Social Links */}
           <div>
             <h4 className="font-bold text-red-500 mb-3">We are in</h4>
-            <div className="flex gap-4">
+            <div className="flex justify-center md:justify-start gap-4">
               <Facebook className="w-5 h-5 text-gray-600 hover:text-red-500 cursor-pointer" />
               <Instagram className="w-5 h-5 text-gray-600 hover:text-red-500 cursor-pointer" />
               <Linkedin className="w-5 h-5 text-gray-600 hover:text-red-500 cursor-pointer" />
@@ -108,6 +108,7 @@ export default function FooterSection() {
           </span>
         </div>
       </footer>
+
     </div>
   );
 }

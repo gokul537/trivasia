@@ -12,7 +12,7 @@ const navLinks = ['Home', 'About Us', 'Services', 'Testimonials', 'Blog', 'Conta
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('Home');
- const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   // Scroll spy effect
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +50,15 @@ export default function Header() {
               href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
               whileHover={{ scale: 1.05, color: '#d32f2f' }}
               className={`relative ${activeSection === link ? 'text-red-600' : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                const section = document.getElementById(link.toLowerCase().replace(/\s+/g, '-'));
+                if (section) {
+                  const offset = 100; // adjust header height
+                  const y = section.getBoundingClientRect().top + window.pageYOffset - offset;
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                }
+              }}
             >
               {link}
               {activeSection === link && (
@@ -60,6 +69,7 @@ export default function Header() {
               )}
             </motion.a>
           ))}
+
         </nav>
 
         {/* Call Info and Button */}
@@ -94,9 +104,8 @@ export default function Header() {
               <a
                 key={idx}
                 href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                className={`text-gray-800 hover:text-red-600 transition ${
-                  activeSection === link ? 'text-red-600 font-bold' : ''
-                }`}
+                className={`text-gray-800 hover:text-red-600 transition ${activeSection === link ? 'text-red-600 font-bold' : ''
+                  }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link}
