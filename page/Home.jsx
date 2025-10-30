@@ -152,25 +152,25 @@ function Home() {
             <p>At Trivasia, we bring education and exploration together — helping you study, travel, and grow with confidence.</p>
 
             {/* Features List */}
-            <div className="space-y-3 mt-2">
+            <div className="space-y-4 mt-2">
                 <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    {/* <CheckCircle className="w-5 h-5 text-red-600" /> */}
                     <span><b>Dual Expertise Under One Roof</b> – Complete overseas education guidance and customized holiday packages—all in one trusted place.</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    {/* <CheckCircle className="w-5 h-5 text-red-600" /> */}
                     <span><b>Local Roots, Global Reach</b> – Headquartered in Karur with branches across Tamil Nadu, offering personalized service backed by global networks.</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    {/* <CheckCircle className="w-5 h-5 text-red-600" /> */}
                     <span><b>End-to-End Support</b> – From university applications and visas to travel planning and on-ground assistance, we handle every detail.</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    {/* <CheckCircle className="w-5 h-5 text-red-600" /> */}
                     <span><b>Tailored Journeys</b> – Every study plan and holiday itinerary is crafted around your goals, preferences, and budget.</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    {/* <CheckCircle className="w-5 h-5 text-red-600" /> */}
                     <span><b>Trust & Transparency</b> – Ethical practices, clear communication, and genuine care ensure a worry-free experience every time.</span>
                 </div>
             </div>
