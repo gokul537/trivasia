@@ -6,14 +6,14 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Page() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setLoading(false), 2000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  if (loading) return <Loader onFinish={() => setLoading(false)} />;
+  // if (loading) return <Loader onFinish={() => setLoading(false)} />;
 
   return (
     <>

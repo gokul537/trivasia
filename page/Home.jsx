@@ -58,7 +58,7 @@ const services = [
         icon: <BookOpen className="w-6 h-6 text-white" />,
         image: s1, // replace with your image
         desc: "Unlock world-class education opportunities across top universities. From applications to scholarships, we guide you every step of the way.",
-        hrefs: "https://study.trivasia.com/"
+        hrefs: "https://www.edu.trivasia.com/"
     },
     {
         title: "Holiday Packages",
@@ -109,59 +109,69 @@ function Home() {
     const [open, setOpen] = useState(false);
     const tabContents = {
         'Our Mission': <>
-            <p>Our mission is to empower students by offering world-class education, global opportunities, and lifelong support for academic and personal growth.</p>
+            <p>To empower individuals and families to explore global opportunities—academically and experientially—through transparent, reliable, and personalized services.</p>
 
             {/* Features List */}
+            <h3><b>We strive to:</b></h3>
             <div className="space-y-3 mt-2">
                 <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
-                    <span>100% Graduation Assistance</span>
+                    {/* <CheckCircle className="w-5 h-5 text-red-600" /> */}
+                    <span><b>Guide with purpose</b> – Help students achieve their dream of studying abroad with expert counselling, university selection, and visa support.</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
-                    <span>Financial Guidance & Scholarships</span>
+                    {/* <CheckCircle className="w-5 h-5 text-red-600" /> */}
+                    <span><b>Curate with care</b> – Design seamless, stress-free holiday experiences for families, connecting them to cultures and destinations worldwide.</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
-                    <span>Career-Oriented Programs</span>
+                    {/* <CheckCircle className="w-5 h-5 text-red-600" /> */}
+                    <span><b>Serve with integrity</b> – Deliver every service with trust, empathy, and excellence—ensuring every journey, academic or leisure, begins with confidence.</span>
                 </div>
             </div>
         </>,
         'Our Vision': <>
-            <p>Our vision is to create a world where every learner has access to quality education, cultural exposure, and the freedom to shape their own future beyond borders.</p>
+            <p>To be India’s most trusted gateway for education and travel—where every journey, whether for learning or leisure, inspires growth, discovery, and lifelong memories.</p>
 
             {/* Features List */}
+            <h3><b>We envision:</b></h3>
             <div className="space-y-3 mt-2">
-                <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
-                    <span>Building Global Leaders</span>
+                <div className="flex items-start gap-3 text-gray-800">
+                    {/* <CheckCircle className="w-[25px] h-[25px] text-red-600" /> */}
+                    <span><b>Global empowerment </b>– Building a bridge between aspirations and opportunities through quality education and meaningful travel.</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
-                    <span>Fostering Cultural Exchange</span>
+                <div className="flex items-start gap-3 text-gray-800">
+                    {/* <CheckCircle className="w-[25px] h-[25px] text-red-600" /> */}
+                    <span><b>Holistic experiences</b> – Combining academic advancement and joyful exploration under one brand to make global journeys simpler and more fulfilling.</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-red-600" />
-                    <span>Empowering Future Generations</span>
+                <div className="flex items-start gap-3 text-gray-800">
+                    {/* <CheckCircle className="w-[25px] h-[25px] text-red-600" /> */}
+                    <span><b>Sustained trust and impact</b> – Becoming a lifelong partner for families and students who seek guidance, adventure, and global exposure with a personal touch.</span>
                 </div>
             </div>
         </>,
         'Why Choose Us': <>
-            <p>We go beyond academics – shaping experiences, guiding journeys, and opening doors to a brighter tomorrow.</p>
+            <p>At Trivasia, we bring education and exploration together — helping you study, travel, and grow with confidence.</p>
 
             {/* Features List */}
             <div className="space-y-3 mt-2">
                 <div className="flex items-center gap-3 text-gray-800">
                     <CheckCircle className="w-5 h-5 text-red-600" />
-                    <span>Personalized Guidance & Counseling</span>
+                    <span><b>Dual Expertise Under One Roof</b> – Complete overseas education guidance and customized holiday packages—all in one trusted place.</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-800">
                     <CheckCircle className="w-5 h-5 text-red-600" />
-                    <span>International Network & Partnerships</span>
+                    <span><b>Local Roots, Global Reach</b> – Headquartered in Karur with branches across Tamil Nadu, offering personalized service backed by global networks.</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-800">
                     <CheckCircle className="w-5 h-5 text-red-600" />
-                    <span>End-to-End Support: From Admission to Settlement</span>
+                    <span><b>End-to-End Support</b> – From university applications and visas to travel planning and on-ground assistance, we handle every detail.</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span><b>Tailored Journeys</b> – Every study plan and holiday itinerary is crafted around your goals, preferences, and budget.</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-800">
+                    <CheckCircle className="w-5 h-5 text-red-600" />
+                    <span><b>Trust & Transparency</b> – Ethical practices, clear communication, and genuine care ensure a worry-free experience every time.</span>
                 </div>
             </div>
         </>,

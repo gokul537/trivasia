@@ -4,11 +4,11 @@ import { Phone, Mail, MapPin } from "lucide-react";
 export default function Branches() {
   const branches = [
     {
-      title: "Trichy",
+      title: "Namakkal",
       phone: "+91 9629557788, 8940557788",
       email: "admission@trivasia.com",
       address:
-        "14/15, Chithra Complex, Near Chathram Bus Stand, Trichy, Tamil Nadu - 639 001",
+        "----"
     },
     {
       title: "Coimbatore",
@@ -24,13 +24,13 @@ export default function Branches() {
       address:
         "No: 11 b, Chakrapani Thirumanjana veethi, Massvil Complex, 1st Floor, Kumbakonam, Tamil Nadu - 612101",
     },
-    {
-      title: "Madurai",
-      phone: "+91 9629557788, 8940557788",
-      email: "admission@trivasia.com",
-      address:
-        "No: 180C, 1st Floor, Kamarajar Salai, Near Chamber of Commerce Building, Madurai, Tamil Nadu - 625009",
-    },
+    // {
+    //   title: "Madurai",
+    //   phone: "+91 9629557788, 8940557788",
+    //   email: "admission@trivasia.com",
+    //   address:
+    //     "No: 180C, 1st Floor, Kamarajar Salai, Near Chamber of Commerce Building, Madurai, Tamil Nadu - 625009",
+    // },
   ];
 
   return (
