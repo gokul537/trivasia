@@ -1,7 +1,6 @@
 import {
   Phone,
   Mail,
-  MapPin,
   Facebook,
   Instagram,
   Linkedin,
@@ -102,7 +101,7 @@ export default function FooterSection() {
           © 2025 Trivasia Tours & Travels Private Limited. All Rights Reserved.{" "}
           <span className="block md:inline">
             Developed By{" "}
-            <a href="#" className="font-medium text-gray-700 hover:text-red-500">
+            <a href="https://leaduptech.com" target="_blank" rel="noopener noreferrer" className="font-medium text-gray-700 hover:text-red-500">
               Leadup Technologies
             </a>
           </span>

@@ -1,8 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-      reactStrictMode: true,
+  reactStrictMode: true,
   images: {
-    domains: ['api.trivasia.com'],  // add your API host here
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.trivasia.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

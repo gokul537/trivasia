@@ -18,9 +18,9 @@ export default function Header() {
     const handleScroll = () => {
       let current = 'Home';
       navLinks.forEach((link) => {
-        const section = document.getElementById(link.toLowerCase().replace(/\s+/g, '-'));
+        const section = document.getElementById(link.toLowerCase().replaceAll(/\s+/g, '-'));
         if (section) {
-          const sectionTop = section.offsetTop - 120; // header height offset
+          const sectionTop = section.offsetTop - 120;
           if (window.scrollY >= sectionTop) {
             current = link;
           }
@@ -44,15 +44,15 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-8 text-sm font-medium text-gray-800">
-          {navLinks.map((link, idx) => (
+          {navLinks.map((link) => (
             <motion.a
-              key={idx}
-              href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+              key={link}
+              href={`#${link.toLowerCase().replaceAll(/\s+/g, '-')}`}
               whileHover={{ scale: 1.05, color: '#d32f2f' }}
               className={`relative ${activeSection === link ? 'text-red-600' : ''}`}
               onClick={(e) => {
                 e.preventDefault();
-                const section = document.getElementById(link.toLowerCase().replace(/\s+/g, '-'));
+                const section = document.getElementById(link.toLowerCase().replaceAll(/\s+/g, '-'));
                 if (section) {
                   const offset = 100; // adjust header height
                   const y = section.getBoundingClientRect().top + window.pageYOffset - offset;
@@ -100,10 +100,10 @@ export default function Header() {
           className="md:hidden bg-white overflow-hidden shadow-lg"
         >
           <div className="flex flex-col px-6 py-4 space-y-4">
-            {navLinks.map((link, idx) => (
+            {navLinks.map((link) => (
               <a
-                key={idx}
-                href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+                key={link}
+                href={`#${link.toLowerCase().replaceAll(/\s+/g, '-')}`}
                 className={`text-gray-800 hover:text-red-600 transition ${activeSection === link ? 'text-red-600 font-bold' : ''
                   }`}
                 onClick={() => setIsOpen(false)}

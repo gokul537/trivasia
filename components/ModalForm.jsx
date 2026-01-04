@@ -36,8 +36,9 @@ export default function ModalForm({ open, onClose }) {
               className="space-y-4"
             >
               <div>
-                <label className="block text-sm font-medium">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium">Name</label>
                 <input
+                  id="name"
                   type="text"
                   required
                   placeholder="Enter your name"
@@ -45,8 +46,9 @@ export default function ModalForm({ open, onClose }) {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium">Email</label>
                 <input
+                  id="email"
                   type="email"
                   required
                   placeholder="Enter your email"
@@ -54,8 +56,9 @@ export default function ModalForm({ open, onClose }) {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium">Message</label>
                 <textarea
+                  id="message"
                   rows="3"
                   placeholder="Write your message..."
                   className="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400"

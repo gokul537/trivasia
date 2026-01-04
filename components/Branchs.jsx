@@ -8,7 +8,7 @@ export default function Branches() {
       phone: "+91 9629557788, 8940557788",
       email: "admission@trivasia.com",
       address:
-        "----"
+        "Namakkal, Tamil Nadu, India"
     },
     {
       title: "Coimbatore",
@@ -77,9 +77,9 @@ export default function Branches() {
 
       {/* Branch Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-5">
-        {branches.map((branch, index) => (
+        {branches.map((branch) => (
           <div
-            key={index}
+            key={branch.title}
             className="bg-white border border-gray-200 rounded-lg shadow-md p-6 text-left"
           >
             <h3 className="text-lg font-bold mb-4 text-red-500">

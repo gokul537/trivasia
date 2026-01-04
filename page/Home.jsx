@@ -22,7 +22,7 @@ import c9 from "@/asset/country/9.svg";
 import c10 from "@/asset/country/10.svg";
 import c11 from "@/asset/country/11.svg";
 import c12 from "@/asset/country/12.svg";
-import { BadgeCheck, BookOpen, BrainCircuit, CheckCircle, Globe2, Plane, User2 } from 'lucide-react';
+import { BookOpen, Globe2, Plane } from 'lucide-react';
 import TestimonialSlider from '@/components/TestimonialSlider';
 import FAQSection from '@/components/FAQSection';
 import Branches from '@/components/Branchs';
@@ -73,7 +73,7 @@ const services = [
         icon: <Globe2 className="w-6 h-6 text-white" />,
         image: s3,
         desc: "Turn your dream of living abroad into reality. We provide expert visa assistance, legal support, and settlement guidance.",
-        hrefs: "#"
+        hrefs: "https://www.trivasia.com/immigration"
     },
 ];
 
@@ -326,12 +326,12 @@ function Home() {
 
                     {/* Right Section */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                        {features.map((feature, index) => (
+                        {features.map((feature) => (
                             <motion.div
-                                key={index}
+                                key={feature.title}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.2 }}
+                                transition={{ delay: features.indexOf(feature) * 0.2 }}
                                 viewport={{ once: true }}
                                 className="flex flex-col items-start"
                             >
@@ -346,25 +346,26 @@ function Home() {
 
 
             <section className="py-16 px-4 md:px-12 lg:px-20 bg-white text-gray-800" id="services">
-                <div className="text-center md:text-start flex flex-wrap mb-12">
-                    <div>
-                        <p className="text-sm tracking-widest text-red-600 uppercase">Services</p>
-                        <h2 className="text-3xl md:text-4xl font-semibold">
-                            What our <span className="text-red-600">Agency</span> <br /> Made for You
-                        </h2>
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center md:text-left mb-12">
+                        <div>
+                            <p className="text-sm tracking-widest text-red-600 uppercase">Services</p>
+                            <h2 className="text-3xl md:text-4xl font-semibold">
+                                What our <span className="text-red-600">Agency</span> <br /> Made for You
+                            </h2>
+                        </div>
+                        <p className="text-sm mt-4 max-w-2xl">
+                            At Trivasia, we go beyond just services – we design life-changing experiences. Whether it's pursuing education abroad, exploring new destinations, or starting a new life in another country, we provide end-to-end solutions with trust, care, and expertise.
+                        </p>
                     </div>
-                    <p className="text-sm mt-4 max-w-2xl mx-auto">
-                        At Trivasia, we go beyond just services – we design life-changing experiences. Whether it’s pursuing education abroad, exploring new destinations, or starting a new life in another country, we provide end-to-end solutions with trust, care, and expertise.
-                    </p>
-                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, index) => (
+                    {services.map((service) => (
                         <motion.div
-                            key={index}
+                            key={service.title}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.2 }}
+                            transition={{ duration: 0.6, delay: services.indexOf(service) * 0.2 }}
                             viewport={{ once: true }}
                             className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
                         >
@@ -390,6 +391,7 @@ function Home() {
                             </div>
                         </motion.div>
                     ))}
+                </div>
                 </div>
             </section>
 
@@ -453,9 +455,9 @@ function Home() {
 
                     {/* Country Grid */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                        {COUNTRIES[selectedTab]?.map((country, index) => (
+                        {COUNTRIES[selectedTab]?.map((country) => (
                             <div
-                                key={index}
+                                key={country.name}
                                 className="flex items-center gap-2 border border-gray-200 rounded-xl px-4 py-2 hover:shadow-sm"
                             >
                                 <Image
@@ -484,6 +486,10 @@ function Home() {
 
             <section id="blog">
                 <BlogSection />
+            </section>
+
+            <section id="contact-us">
+                {/* Contact Us section placeholder - can be expanded with contact form */}
             </section>
 
             <ModalForm open={open} onClose={() => setOpen(false)} />

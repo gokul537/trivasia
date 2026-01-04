@@ -55,23 +55,23 @@ export default function FAQSection() {
 
       {/* Right FAQs */}
       <div className="lg:w-1/2 w-full space-y-4">
-        {faqs.map((faq, index) => (
+        {faqs.map((faq) => (
           <div
-            key={index}
+            key={faq.question}
             className="border border-gray-200 rounded-xl overflow-hidden shadow-sm"
           >
             <button
-              onClick={() => toggleFAQ(index)}
+              onClick={() => toggleFAQ(faqs.indexOf(faq))}
               className="flex items-center justify-between w-full px-6 py-4 bg-white text-left font-medium text-gray-900"
             >
               <span>{faq.question}</span>
               <span className="text-red-600">
-                {openIndex === index ? <Minus /> : <Plus />}
+                {openIndex === faqs.indexOf(faq) ? <Minus /> : <Plus />}
               </span>
             </button>
 
             <AnimatePresence>
-              {openIndex === index && (
+              {openIndex === faqs.indexOf(faq) && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
@@ -82,8 +82,8 @@ export default function FAQSection() {
                   <p className="mb-2">{faq.answer}</p>
                   {faq.points && (
                     <ul className="space-y-1 text-sm font-medium">
-                      {faq.points.map((point, i) => (
-                        <li key={i} className="flex items-start gap-2">
+                      {faq.points.map((point) => (
+                        <li key={point} className="flex items-start gap-2">
                           <span className="text-red-500">✔️</span> {point}
                         </li>
                       ))}
